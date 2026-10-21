@@ -1,0 +1,121 @@
+.chats {
+    /* CHANGE: a comfortable reading column with independent, dark scrolling. */
+    width: min(100%, 860px);
+    box-sizing: border-box;
+    flex: 1;
+    overflow-y: auto;
+    padding: 2rem clamp(1rem, 4vw, 2.5rem);
+    scrollbar-width: thin;
+    scrollbar-color: #4a4a4a #212121;
+}
+
+/* CHANGE: match the chat scrollbar to the dark interface instead of browser white. */
+.chats::-webkit-scrollbar {
+    width: 10px;
+}
+
+.chats::-webkit-scrollbar-track {
+    background: #212121;
+}
+
+.chats::-webkit-scrollbar-thumb {
+    background: #4a4a4a;
+    border: 2px solid #212121;
+    border-radius: 999px;
+}
+
+.chats::-webkit-scrollbar-thumb:hover {
+    background: #666666;
+}
+
+.userDiv {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.9rem;
+    width: 100%;
+    margin: 1.5rem 0 2rem;
+}
+
+
+.gptDiv {
+    text-align: left;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    letter-spacing: 0.005em;
+    margin: 0 0 2rem;
+}
+
+/* Spacious Markdown typography similar to modern AI chat interfaces. */
+.gptDiv p {
+    margin: 0 0 1.25rem;
+}
+
+.gptDiv h1,
+.gptDiv h2,
+.gptDiv h3 {
+    line-height: 1.3;
+    margin: 2rem 0 0.9rem;
+}
+
+.gptDiv h1 { font-size: 1.65rem; }
+.gptDiv h2 { font-size: 1.32rem; }
+.gptDiv h3 { font-size: 1.12rem; }
+
+.gptDiv ul,
+.gptDiv ol {
+    margin: 0 0 1.35rem;
+    padding-left: 1.6rem;
+}
+
+.gptDiv li {
+    margin: 0.38rem 0;
+    padding-left: 0.2rem;
+}
+
+.gptDiv hr {
+    border: 0;
+    border-top: 1px solid #555;
+    margin: 2rem 0;
+}
+
+.userMessage {
+    background-color: #323232;
+    padding: 10px 20px;
+    border-radius: 14px;
+    margin: 0 0 0 auto;
+    max-width: 500px;
+    width: fit-content;
+    overflow-wrap: anywhere;
+    line-height: 1.55;
+    text-align: left;
+}
+
+.hljs {
+    border-radius: 14px !important;
+}
+
+pre {
+    white-space: pre-wrap;
+    line-height: 1.55;
+    margin: 1.25rem 0;
+}
+
+@media (max-width: 768px) {
+    .chats {
+        padding: 1.25rem 1rem;
+    }
+
+    .gptDiv {
+        font-size: 0.94rem;
+        line-height: 1.65;
+        margin-bottom: 1.6rem;
+    }
+
+    .gptDiv h1 { font-size: 1.42rem; }
+    .gptDiv h2 { font-size: 1.2rem; }
+
+    .userMessage {
+        max-width: 88%;
+        padding: 0.7rem 0.9rem;
+    }
+}
